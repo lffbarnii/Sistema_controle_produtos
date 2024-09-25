@@ -3,5 +3,12 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    $logado = false;
+    $adm = true;
+
+    return view('index', ['logado' => $logado, 'adm' => $adm]);
+});
+
+Route::get('/contato', function () {
+    return view('contato');
 });
